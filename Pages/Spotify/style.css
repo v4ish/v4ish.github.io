@@ -1,0 +1,23 @@
+body,html {
+  font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+  background: #000;
+  margin: 20px;
+}
+
+.amour{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.chayakada{
+  display:flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.fallinlove{
+    display:flex;
+    justify-content: left;
+    align-items: center;
+  }
