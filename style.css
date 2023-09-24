@@ -57,7 +57,7 @@ body,html {
     align-items: center;
     margin:2%;
   }
-  .bodyy{
+  .mainthing2{
     color: white;
     display: flex;
     justify-content: center;
@@ -67,7 +67,6 @@ body,html {
     padding-left: 28%;
     width:40%;
     font: bold 10px/1.4 'Space Mono', monospace;
-    font-family: 'Space Mono', monospace;
   }
 
   h1{
@@ -128,5 +127,4 @@ body,html {
     .footer .row a i{
     margin:0% 3%;
     }
-    }
-    
+  }
