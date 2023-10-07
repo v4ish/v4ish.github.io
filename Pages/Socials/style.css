@@ -1,4 +1,37 @@
 body{
     background-color: black;
     color: white;
+    font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+    overflow: auto;
 }
+
+  .smthn {
+    padding: 2% 6%;
+    margin: 5%;
+  }
+
+  .center {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+  }
+  img{
+    padding: 20px;
+    filter: brightness(100%);
+  }
+
+  img:hover{
+    filter: brightness(35%);
+
+  }
+
+  h1:hover{
+    color: cyan;
+    cursor: none;
+  }
+  hr{
+    color: cyan;
+    border: 2px solid rgba(0, 183, 255, 0.628);
+  }
