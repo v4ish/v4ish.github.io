@@ -4,20 +4,14 @@ body,html {
   margin: 20px;
 }
 
-.amour{
+.left{
   display: flex;
   justify-content: left;
   align-items: center;
 }
 
-.chayakada{
+.right{
   display:flex;
   justify-content: right;
   align-items: center;
 }
-
-.fallinlove{
-    display:flex;
-    justify-content: left;
-    align-items: center;
-  }
