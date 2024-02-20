@@ -1,13 +1,14 @@
-body,html {
+body,
+html {
   margin: 0;
-  font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+  font: bold 14px/1.4 "Open Sans", arial, sans-serif;
   background: #000;
   color: white;
-  overflow: auto
+  overflow: auto;
 }
 
 ul {
-  margin: 2% auto 0;
+  margin: 1% auto 0;
   padding: 0;
   list-style: none;
   display: table;
@@ -56,6 +57,10 @@ a:hover:after {
   }
 }
 
+img {
+  padding-left: 4%;
+}
+
 .mainthing {
   color: white;
   display: flex;
@@ -64,32 +69,32 @@ a:hover:after {
   margin: 2%;
 }
 
-.mainthing2 {
+.bodycontent {
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: right;
   margin: 2%;
-  padding-left: 28%;
-  width: 40%;
-  font: bold 12px/1.4 'Open Sans', arial, sans-serif;
+  padding-left: 18%;
+  width: 60%;
+  font: bold 12px/1.4 "Open Sans", arial, sans-serif;
 }
 
-.mainthing2 a {
-  color: hotpink;
+.bodycontent a {
+  color: lightgreen;
+  padding: 0;
+  text-decoration: none;
+  text-transform: none;
 }
 
-.mainthing2 a:hover {
+.bodycontent a:hover {
   color: cyan;
-}
-
-h1 {
-  margin: 1%;
+  cursor: none;
 }
 
 .thing {
-  margin: 1%;
+  margin-left: 1%;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -106,7 +111,7 @@ h1 {
 .footer {
   background: #000;
   padding: 30px 0px;
-  font-family: 'Play', sans-serif;
+  font-family: "Play", sans-serif;
   text-align: center;
 }
 
@@ -142,7 +147,7 @@ h1 {
   margin: 0% 1%;
 }
 
-@media (max-width:720px) {
+@media (max-width: 720px) {
   .footer {
     text-align: left;
     padding: 5%;
