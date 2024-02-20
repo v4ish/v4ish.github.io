@@ -5,7 +5,3 @@
 ### Other domains
 
 [Netlify](https://v4ish.netlify.app)
-
-[Firebaseapp.com](https://v4ish-27b08.firebaseapp.com)
-
-[web.app](https://v4ish-27b08.web.app/)
