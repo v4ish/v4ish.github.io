@@ -4,4 +4,10 @@
 
 ### Other domains
 
-[Netlify](https://v4ish.netlify.app)
+- [Netlify](https://v4ish.netlify.app)
+
+- [Vercel](https://v4ish.vercel.app)
+
+### Screenshots
+
+[![Homepage](screenshot.png)](https://v4ish.netlify.app/)
