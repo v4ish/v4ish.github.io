@@ -1,17 +1,18 @@
-body,html {
-  font: bold 14px/1.4 'Open Sans', arial, sans-serif;
-  background: #000;
+body,
+html {
+  font: bold 14px/1.4 "Open Sans", arial, sans-serif;
+  background: #0f0f0f;
   margin: 20px;
 }
 
-.left{
+.left {
   display: flex;
   justify-content: left;
   align-items: center;
 }
 
-.right{
-  display:flex;
+.right {
+  display: flex;
   justify-content: right;
   align-items: center;
 }
