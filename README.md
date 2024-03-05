@@ -10,4 +10,4 @@
 
 ### Screenshots
 
-[![Homepage](screenshot.png)](https://v4ish.netlify.app/)
+[![Homepage](screenshot.png)](https://v4ish.vercel.app/)
