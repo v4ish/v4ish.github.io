@@ -74,8 +74,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: right;
   margin: 2%;
+  text-align: right;
   padding-left: 18%;
   width: 60%;
   font: bold 12px/1.4 "Open Sans", arial, sans-serif;
@@ -104,6 +104,9 @@ img {
   color: cyan;
   cursor: none;
   padding: 0;
+}
+.input1 {
+  color: #0f0f0f;
 }
 
 /* ________Footer________*/
