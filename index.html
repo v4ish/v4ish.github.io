@@ -1,74 +1,297 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="This is description" content="Portfolio of v4ish" />
-    <meta name="author" content="v4ish" />
-    <link rel="icon" type="image/x-icon" href="pfp.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>v4ish - Homepage</title>
-  </head>
+import React from "react";
+import { motion } from "framer-motion";
+import { Github, Twitter, Linkedin, Mail, Music2, Globe, ArrowRight, ExternalLink, Sparkles, Cpu, Code2, Palette, Phone, Sun, Moon } from "lucide-react";
 
-  <body oncontextmenu="return false;">
-    <div class="thing">
-      <h1>v4_ish</h1>
+// --- Configurable data ----------------------------------------------
+const PROFILE = {
+  name: "Vaisakh Kumar",
+  handle: "v4ish",
+  tagline: "Builder • Tinkerer • Curious Human",
+  location: "Kerala, IN",
+  heroNote: "Sugam āno? Achan ño? (Just checking in 😉)",
+  email: "mailto:hello@v4ish.dev",
+  socials: [
+    { label: "GitHub", href: "https://github.com/v4ish", icon: Github },
+    { label: "Twitter", href: "https://x.com/", icon: Twitter },
+    { label: "LinkedIn", href: "https://www.linkedin.com/", icon: Linkedin },
+  ],
+};
+
+const PROJECTS = [
+  {
+    title: "CS2 Presence Watcher",
+    blurb: "Lightweight process watcher that updates rich presence across apps.",
+    tags: ["C#", "RPC", "Desktop"],
+    href: "#",
+  },
+  {
+    title: "Playwright Sec Toolkit",
+    blurb: "Automated scripts for XSS/CSRF/IDOR flows with session handling.",
+    tags: ["Playwright", "Security"],
+    href: "#",
+  },
+  {
+    title: "Live Lyrics Mini Player",
+    blurb: "Glassy, always-on-top mini lyric viewer with tray controls.",
+    tags: ["Python", "Desktop"],
+    href: "#",
+  },
+  {
+    title: "Minecraft Hosting Guide",
+    blurb: "Open-source self-hosting templates with monitoring baked-in.",
+    tags: ["Docker", "Infra"],
+    href: "#",
+  },
+  {
+    title: "Spotify Now Playing",
+    blurb: "Widget to surface current track with rich metadata.",
+    tags: ["React", "API"],
+    href: "#",
+  },
+  {
+    title: "2Bars",
+    blurb: "Minimal PyQt overlay for cinematic focus bars with hotkeys.",
+    tags: ["PyQt", "UX"],
+    href: "#",
+  },
+  {
+    title: "RDR2 HUD for CS2",
+    blurb: "Experimental overlay bringing RDR2-style HUD into CS2.",
+    tags: ["Python", "Overlay"],
+    href: "#",
+  },
+  {
+    title: "Network Tweaks",
+    blurb: "Script pack to reduce jitter/ping for multiplayer titles.",
+    tags: ["Windows", "Net"],
+    href: "#",
+  },
+];
+
+// --- Helpers ---------------------------------------------------------
+const cn = (...xs) => xs.filter(Boolean).join(" ");
+
+function useThemeToggle() {
+  const [isDark, setIsDark] = React.useState(true);
+  React.useEffect(() => {
+    const cls = document.documentElement.classList;
+    if (isDark) cls.add("dark"); else cls.remove("dark");
+  }, [isDark]);
+  return { isDark, toggle: () => setIsDark(d => !d) };
+}
+
+// --- Components ------------------------------------------------------
+function Nav() {
+  const { isDark, toggle } = useThemeToggle();
+  return (
+    <div className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/50 dark:supports-[backdrop-filter]:bg-black/30 bg-white/70 dark:bg-black/30 border-b border-black/5 dark:border-white/10">
+      <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="#home" className="flex items-center gap-2 font-semibold tracking-tight">
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-indigo-500 text-white shadow">
+            v4
+          </span>
+          <span className="hidden sm:block">{PROFILE.handle}</span>
+        </a>
+        <div className="flex items-center gap-4 text-sm">
+          <a href="#projects" className="opacity-80 hover:opacity-100">Projects</a>
+          <a href="#now" className="opacity-80 hover:opacity-100">Now Playing</a>
+          <a href="#contact" className="opacity-80 hover:opacity-100">Contact</a>
+          <button onClick={toggle} className="rounded-xl p-2 border border-black/5 dark:border-white/10 hover:shadow-sm">
+            {isDark ? <Sun className="h-4 w-4"/> : <Moon className="h-4 w-4"/>}
+          </button>
+        </div>
+      </nav>
     </div>
+  );
+}
 
-    <div class="Header">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li>
-          <a href="Pages\Projects\index.html" target="_blank">Projects</a>
-        </li>
-        <li><a href="Pages\Socials\index.html" target="_blank">Socials</a></li>
-        <li><a href="Pages\Spotify\index.html" target="_blank">Spotify</a></li>
-      </ul>
-    </div>
-
-    <div class="mainthing">
-      <h1>Hey there!👋</h1>
-      <img
-        src="pfp.png"
-        alt="Profile"
-        width="15%"
-        height="15%"
-        media="(max-width: 30px)"
-      />
-    </div>
-
-    <div class="bodycontent">
-      <h2>
-        Sugam ano?
-        <br />
-        Alla
-        <br />
-        Achan ndo?
-        <br />
-        Illya
-        <br />
-        Ninak achan illathen njan enth cheyyana?
-        <hr />
-        <input type="text" class="input1" placeholder="Type here" />
-      </h2>
-    </div>
-  </body>
-
-  <footer>
-    <div class="footer">
-      <div class="row">
-        <ul>
-          <li>
-            <a href="mailto:thevk350@proton.me" target="_blank">Contact me</a>
-          </li>
-          <li>
-            <a href="https://v4ish.vercel.app/" target="_blank">Mirror</a>
-          </li>
-        </ul>
+function Hero() {
+  return (
+    <section id="home" className="relative overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        {/* soft radial glow */}
+        <div className="pointer-events-none absolute -top-48 left-1/2 -translate-x-1/2 h-[32rem] w-[32rem] rounded-full bg-gradient-to-r from-fuchsia-500/30 via-indigo-500/30 to-sky-500/30 blur-3xl"/>
       </div>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+        <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.6}} className="max-w-3xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 px-3 py-1 text-xs backdrop-blur">
+            <Sparkles className="h-3.5 w-3.5"/>
+            <span className="opacity-80">{PROFILE.heroNote}</span>
+          </div>
+          <h1 className="mt-6 text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+            Hey, I'm {PROFILE.name}.<br/>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-fuchsia-500 to-indigo-500">I design, code and ship</span> useful things.
+          </h1>
+          <p className="mt-5 text-base sm:text-lg opacity-80">
+            Computer engineering student from {PROFILE.location}. I enjoy building clean UIs, fast desktop tools, and playful experiments.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href="#projects" className="group inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 bg-black text-white dark:bg-white dark:text-black shadow hover:shadow-md">
+              Explore Projects <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition"/>
+            </a>
+            <a href={PROFILE.email} className="inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 border border-black/10 dark:border-white/10 backdrop-blur">
+              <Mail className="h-4 w-4"/> Contact
+            </a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
-      <div class="row">© Copyright 2025 Vaisakh Kumar. All right Reserved.</div>
+function Pill({ children }) {
+  return <span className="rounded-full border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 px-2.5 py-1 text-xs backdrop-blur">{children}</span>;
+}
+
+function Projects() {
+  return (
+    <section id="projects" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="flex items-center gap-2">
+        <Code2 className="h-5 w-5"/>
+        <h2 className="text-2xl sm:text-3xl font-bold">Selected Projects</h2>
+      </div>
+      <p className="mt-2 opacity-80 max-w-3xl">A mix of utilities, overlays, and experiments. Most repos are scrappy but fast.</p>
+
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        {PROJECTS.map((p, i) => (
+          <motion.a
+            whileHover={{ y: -4 }}
+            key={i}
+            href={p.href}
+            className={cn(
+              "group relative rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4 backdrop-blur shadow-sm hover:shadow-md",
+            )}
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <h3 className="font-semibold tracking-tight">{p.title}</h3>
+                <p className="mt-1 text-sm opacity-80">{p.blurb}</p>
+              </div>
+              <ExternalLink className="h-4 w-4 opacity-60 group-hover:opacity-100"/>
+            </div>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {p.tags.map((t, j) => <Pill key={j}>{t}</Pill>)}
+            </div>
+          </motion.a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function NowPlaying() {
+  return (
+    <section id="now" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="flex items-center gap-2">
+        <Music2 className="h-5 w-5"/>
+        <h2 className="text-2xl sm:text-3xl font-bold">Now Playing</h2>
+      </div>
+      <p className="mt-2 opacity-80 max-w-2xl">Your current Spotify track appears here. Swap the iframe src with your own or wire up the Web API for richer data.</p>
+
+      <div className="mt-6 rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4 backdrop-blur">
+        <div className="aspect-video w-full overflow-hidden rounded-xl">
+          {/* Minimal embed placeholder */}
+          <iframe
+            title="Spotify"
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function About() {
+  return (
+    <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <motion.div initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} viewport={{ once: true }} transition={{ duration: 0.5 }} className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-6 backdrop-blur">
+          <div className="flex items-center gap-3">
+            <Palette className="h-5 w-5"/>
+            <h3 className="font-semibold">What I enjoy</h3>
+          </div>
+          <ul className="mt-3 space-y-2 text-sm opacity-90">
+            <li>Open world games & subtle UI polish</li>
+            <li>Fast, native-feeling desktop utilities</li>
+            <li>Security testing / automation with Playwright</li>
+          </ul>
+        </motion.div>
+        <motion.div initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-6 backdrop-blur">
+          <div className="flex items-center gap-3">
+            <Cpu className="h-5 w-5"/>
+            <h3 className="font-semibold">Tech</h3>
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {["React", "Tailwind", "Framer Motion", "Python", "C#", "Playwright", "Docker"].map((t, i) => <Pill key={i}>{t}</Pill>)}
+          </div>
+        </motion.div>
+        <motion.div initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} viewport={{ once: true }} transition={{ duration: 0.7 }} className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-6 backdrop-blur">
+          <div className="flex items-center gap-3">
+            <Globe className="h-5 w-5"/>
+            <h3 className="font-semibold">On the web</h3>
+          </div>
+          <div className="mt-3 flex flex-wrap items-center gap-3">
+            {PROFILE.socials.map(({label, href, icon:Icon}) => (
+              <a key={label} href={href} className="inline-flex items-center gap-2 rounded-xl border border-black/10 dark:border-white/10 px-3 py-2 hover:shadow-sm">
+                <Icon className="h-4 w-4"/><span className="text-sm">{label}</span>
+              </a>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-6 backdrop-blur">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h3 className="text-xl font-semibold">Let’s build something</h3>
+            <p className="opacity-80">I’m open to collabs, internships, and interesting side quests.</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <a href={PROFILE.email} className="inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 bg-black text-white dark:bg-white dark:text-black shadow hover:shadow-md">
+              <Mail className="h-4 w-4"/> Email me
+            </a>
+            <a href="#" className="inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 border border-black/10 dark:border-white/10">
+              <Phone className="h-4 w-4"/> Book a call
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 opacity-80 text-sm">
+      <div className="flex flex-col sm:flex-row justify-between gap-2">
+        <span>© {new Date().getFullYear()} {PROFILE.name}. All rights reserved.</span>
+        <span className="flex items-center gap-2"><span className="opacity-70">Built with</span> <Code2 className="h-4 w-4"/> <span className="opacity-70">& curiosity</span></span>
+      </div>
+    </footer>
+  );
+}
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.06),transparent_60%),radial-gradient(ellipse_at_bottom,rgba(236,72,153,0.06),transparent_60%)] text-black dark:text-white selection:bg-fuchsia-500/30">
+      <Nav/>
+      <Hero/>
+      <About/>
+      <Projects/>
+      <NowPlaying/>
+      <Contact/>
+      <Footer/>
     </div>
-  </footer>
-</html>
+  );
+}
