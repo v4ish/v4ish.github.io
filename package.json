@@ -1,5 +1,5 @@
 {
-  "name": "v4ish-vercel",
+  "name": "v4ish-vercel-full",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -8,10 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/all": "^3.9.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@tsparticles/react": "^3.0.1",
+    "tsparticles": "^2.11.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",

@@ -1,18 +1,19 @@
-# V4ish Vercel Site
+# V4ish — Vercel Deploy (Full tsparticles)
 
-Dark, vibrant, animated background React site powered by Vite + Tailwind + tsParticles.
+This project is configured for Vercel (Vite + React + Tailwind + full tsparticles bundle).
 
-## Run locally
-
+## Local dev
 ```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:5173
+## Build
+```bash
+npm install
+npm run build
+npm run preview
+```
 
-## Deploy on Vercel
-
-1. Go to [Vercel](https://vercel.com) → New Project → Upload
-2. Upload this zip
-3. Vercel auto-builds and deploys 🎉
+## Deploy to Vercel
+Upload the zip or push to GitHub and connect the repo to Vercel.
