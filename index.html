@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v4ish - Creative Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0a0a0a;
+        color: #f5f5f5;
+        scroll-behavior: smooth;
+      }
+
+      .gradient-text {
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .project-card {
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-color: rgba(59, 130, 246, 0.5);
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .skill-badge {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .skill-badge:hover {
+        background: rgba(59, 130, 246, 0.1);
+        border-color: rgba(59, 130, 246, 0.5);
+      }
+
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg z-50 border-b border-gray-800"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <span class="text-xl font-bold gradient-text">v4ish</span>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <a
+                href="#home"
+                class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="#projects"
+                class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium"
+                >Projects</a
+              >
+              <a
+                href="#skills"
+                class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium"
+                >Skills</a
+              >
+              <a
+                href="#contact"
+                class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-300 hover:text-white focus:outline-none"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-black bg-opacity-95 backdrop-filter backdrop-blur-lg border-t border-gray-800"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#home"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+            >About</a
+          >
+          <a
+            href="#projects"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+            >Projects</a
+          >
+          <a
+            href="#skills"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto"
+    >
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">
+            Hi, I'm <span class="gradient-text">v4ish</span>
+          </h1>
+          <h2 class="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
+            Creative Developer
+          </h2>
+          <p class="text-gray-400 mb-8 max-w-lg">
+            I build beautiful, functional, and user-friendly digital
+            experiences. Passionate about design, development, and everything in
+            between.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="#contact"
+              class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-md text-white font-medium hover:opacity-90 transition-opacity"
+            >
+              Get in Touch
+            </a>
+            <a
+              href="#projects"
+              class="px-6 py-3 border border-gray-700 rounded-md text-white font-medium hover:bg-gray-800 transition-colors"
+            >
+              View Work
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <div
+            class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-700"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-70"
+            ></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i
+                class="fas fa-user-astronaut text-8xl text-white opacity-90"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div class="section-divider my-12"></div>
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text"
+      >
+        About Me
+      </h2>
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+          <p class="text-gray-300 mb-6">
+            I'm a passionate developer with a keen eye for design and user
+            experience. With several years of experience in web development, I
+            specialize in creating modern, responsive, and performant web
+            applications.
+          </p>
+          <p class="text-gray-300 mb-6">
+            My journey in tech started when I was young, and I've been hooked
+            ever since. I love solving complex problems and turning ideas into
+            reality through code.
+          </p>
+          <p class="text-gray-300 mb-8">
+            When I'm not coding, you can find me exploring new technologies,
+            contributing to open-source projects, or enjoying the outdoors.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center">
+              <i class="fas fa-map-marker-alt text-blue-400 mr-2"></i>
+              <span class="text-gray-300">Remote, Worldwide</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-code text-purple-400 mr-2"></i>
+              <span class="text-gray-300">Full-Stack Development</span>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <div class="bg-gray-800 rounded-xl p-8 project-card">
+            <h3 class="text-xl font-semibold mb-4">My Experience</h3>
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-medium text-gray-200">
+                  Frontend Developer @ TechCorp
+                </h4>
+                <p class="text-sm text-gray-400">2021 - Present</p>
+                <p class="text-gray-300 mt-2">
+                  Building modern web applications with React and Next.js.
+                </p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-200">Freelance Developer</h4>
+                <p class="text-sm text-gray-400">2019 - 2021</p>
+                <p class="text-gray-300 mt-2">
+                  Worked with various clients to deliver custom web solutions.
+                </p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-200">
+                  Computer Science Student
+                </h4>
+                <p class="text-sm text-gray-400">2015 - 2019</p>
+                <p class="text-gray-300 mt-2">
+                  Graduated with honors while working on personal projects.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div class="section-divider my-12"></div>
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text"
+      >
+        Featured Projects
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="project-card rounded-xl overflow-hidden">
+          <div
+            class="h-48 bg-gradient-to-r from-blue-600 to-purple-700 flex items-center justify-center"
+          >
+            <i
+              class="fas fa-project-diagram text-6xl text-white opacity-90"
+            ></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+            <p class="text-gray-400 mb-4">
+              A full-featured online store with payment integration and admin
+              dashboard.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >React</span
+              >
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >Node.js</span
+              >
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >MongoDB</span
+              >
+            </div>
+            <a
+              href="#"
+              class="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center"
+            >
+              View Project <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card rounded-xl overflow-hidden">
+          <div
+            class="h-48 bg-gradient-to-r from-purple-600 to-pink-700 flex items-center justify-center"
+          >
+            <i class="fas fa-mobile-alt text-6xl text-white opacity-90"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Fitness App</h3>
+            <p class="text-gray-400 mb-4">
+              Mobile application for tracking workouts and nutrition with social
+              features.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >React Native</span
+              >
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >Firebase</span
+              >
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >Redux</span
+              >
+            </div>
+            <a
+              href="#"
+              class="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center"
+            >
+              View Project <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card rounded-xl overflow-hidden">
+          <div
+            class="h-48 bg-gradient-to-r from-pink-600 to-red-700 flex items-center justify-center"
+          >
+            <i class="fas fa-chart-line text-6xl text-white opacity-90"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+            <p class="text-gray-400 mb-4">
+              Real-time data visualization platform with customizable reports.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >Vue.js</span
+              >
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >D3.js</span
+              >
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >Express</span
+              >
+            </div>
+            <a
+              href="#"
+              class="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center"
+            >
+              View Project <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a
+          href="#"
+          class="inline-flex items-center px-6 py-3 border border-gray-700 rounded-md text-white font-medium hover:bg-gray-800 transition-colors"
+        >
+          View All Projects <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div class="section-divider my-12"></div>
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text"
+      >
+        Skills & Technologies
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <!-- Frontend -->
+        <div class="bg-gray-800 rounded-xl p-6 project-card">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-laptop-code text-blue-400 mr-3 text-xl"></i>
+            <h3 class="text-lg font-semibold">Frontend</h3>
+          </div>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> React.js
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Next.js
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Vue.js
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
+              TailwindCSS
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
+              TypeScript
+            </li>
+          </ul>
+        </div>
+
+        <!-- Backend -->
+        <div class="bg-gray-800 rounded-xl p-6 project-card">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-server text-purple-400 mr-3 text-xl"></i>
+            <h3 class="text-lg font-semibold">Backend</h3>
+          </div>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Node.js
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Express
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Django
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> GraphQL
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> REST APIs
+            </li>
+          </ul>
+        </div>
+
+        <!-- Databases -->
+        <div class="bg-gray-800 rounded-xl p-6 project-card">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-database text-pink-400 mr-3 text-xl"></i>
+            <h3 class="text-lg font-semibold">Databases</h3>
+          </div>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> MongoDB
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
+              PostgreSQL
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Firebase
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Redis
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> MySQL
+            </li>
+          </ul>
+        </div>
+
+        <!-- DevOps -->
+        <div class="bg-gray-800 rounded-xl p-6 project-card">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-cloud text-yellow-400 mr-3 text-xl"></i>
+            <h3 class="text-lg font-semibold">DevOps</h3>
+          </div>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Docker
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
+              Kubernetes
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> AWS
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> CI/CD
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> GitHub
+              Actions
+            </li>
+          </ul>
+        </div>
+
+        <!-- Design -->
+        <div class="bg-gray-800 rounded-xl p-6 project-card">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-paint-brush text-green-400 mr-3 text-xl"></i>
+            <h3 class="text-lg font-semibold">Design</h3>
+          </div>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Figma
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Adobe XD
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> UI/UX
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
+              Prototyping
+            </li>
+            <li class="flex items-center text-gray-300">
+              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
+              Wireframing
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div class="section-divider my-12"></div>
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text"
+      >
+        Get In Touch
+      </h2>
+      <div class="flex flex-col md:flex-row gap-12">
+        <div class="md:w-1/2">
+          <div class="bg-gray-800 rounded-xl p-8 project-card h-full">
+            <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <i class="fas fa-envelope text-blue-400 mt-1 mr-4"></i>
+                <div>
+                  <h4 class="font-medium text-gray-200">Email</h4>
+                  <a
+                    href="mailto:hello@v4ish.dev"
+                    class="text-gray-400 hover:text-blue-400 transition-colors"
+                    >hello@v4ish.dev</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="fas fa-globe text-purple-400 mt-1 mr-4"></i>
+                <div>
+                  <h4 class="font-medium text-gray-200">Website</h4>
+                  <a
+                    href="https://v4ish.dev"
+                    class="text-gray-400 hover:text-purple-400 transition-colors"
+                    >v4ish.dev</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="fab fa-github text-gray-300 mt-1 mr-4"></i>
+                <div>
+                  <h4 class="font-medium text-gray-200">GitHub</h4>
+                  <a
+                    href="https://github.com/v4ish"
+                    class="text-gray-400 hover:text-gray-200 transition-colors"
+                    >github.com/v4ish</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="fab fa-twitter text-blue-400 mt-1 mr-4"></i>
+                <div>
+                  <h4 class="font-medium text-gray-200">Twitter</h4>
+                  <a
+                    href="https://twitter.com/v4ish"
+                    class="text-gray-400 hover:text-blue-400 transition-colors"
+                    >@v4ish</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <form class="bg-gray-800 rounded-xl p-8 project-card">
+            <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+            <div class="space-y-6">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-300 mb-2"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-300 mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-300 mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Your message"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-md text-white font-medium hover:opacity-90 transition-opacity"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-black bg-opacity-50 py-12 px-4 sm:px-6 lg:px-8 border-t border-gray-800"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <span class="text-xl font-bold gradient-text">v4ish</span>
+            <p class="text-gray-400 mt-2">
+              Building digital experiences that matter.
+            </p>
+          </div>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-blue-400 transition-colors"
+            >
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-blue-600 transition-colors"
+            >
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-pink-500 transition-colors"
+            >
+              <i class="fab fa-dribbble text-xl"></i>
+            </a>
+          </div>
+        </div>
+        <div
+          class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm"
+        >
+          <p>&copy; 2023 v4ish. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.add("hidden");
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Add shadow to navbar on scroll
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 10) {
+          nav.classList.add("shadow-lg");
+        } else {
+          nav.classList.remove("shadow-lg");
+        }
+      });
+    </script>
+  </body>
+</html>
