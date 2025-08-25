@@ -86,7 +86,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   <body class="min-h-screen">
     <!-- Navigation -->
     <nav
-      class="fixed w-full bg-black bg-opacity-10 backdrop-filter backdrop-blur-lg z-10 border-b border-gray-800"
+      class="fixed w-full bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg z-50 border-b border-gray-800"
     >
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
@@ -96,27 +96,27 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
           <div class="hidden md:block">
             <div class="ml-10 flex items-center space-x-8">
               <a
-                href="#home"
+                href="index.html"
                 class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium"
                 >Home</a
               >
               <a
-                href="#about"
+                href="index.html#about"
                 class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium"
                 >About</a
               >
               <a
-                href="projects.html" target="_blank"
+                href="#"
                 class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium"
                 >Projects</a
               >
               <a
-                href="#skills"
+                href="index.html#skills"
                 class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium"
                 >Skills</a
               >
               <a
-                href="#contact"
+                href="index.html#contact"
                 class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium"
                 >Contact</a
               >
@@ -152,17 +152,17 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       >
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <a
-            href="#home"
+            href="index.html"
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
             >Home</a
           >
           <a
-            href="#about"
+            href="#"
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
             >About</a
           >
           <a
-            href="#projects"
+            href="#"
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
             >Projects</a
           >
@@ -179,135 +179,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         </div>
       </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section
-      id="home"
-      class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto"
-    >
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div class="md:w-1/2 mb-10 md:mb-0">
-          <h1 class="text-4xl md:text-6xl font-bold mb-4">
-            Hi, I'm <span class="gradient-text">v4ish</span>
-          </h1>
-          <h2 class="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
-            Creative Developer
-          </h2>
-          <p class="text-gray-400 mb-8 max-w-lg">
-            I build beautiful, functional, and user-friendly digital
-            experiences. Passionate about design, development, and everything in
-            between.
-          </p>
-          <div class="flex space-x-4">
-            <a
-              href="#contact"
-              class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-md text-white font-medium hover:opacity-90 transition-opacity"
-            >
-              Get in Touch
-            </a>
-            <a
-              href="#projects"
-              class="px-6 py-3 border border-gray-700 rounded-md text-white font-medium hover:bg-gray-800 transition-colors"
-            >
-              View Work
-            </a>
-          </div>
-        </div>
-        <div class="md:w-1/2 flex justify-center">
-          <div
-            class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-700"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-70"
-            ></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <i> <img src="main.png" alt="Person" /> </i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-      <h2
-        class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text"
-      >
-        About Me
-      </h2>
-      <div class="flex flex-col md:flex-row items-center gap-12">
-        <div class="md:w-1/2">
-          <p class="text-gray-300 mb-6">
-            I'm a passionate developer with a keen eye for design and user
-            experience. With several years of experience in web development, I
-            specialize in creating modern, responsive, and performant web
-            applications.
-          </p>
-          <p class="text-gray-300 mb-6">
-            My journey in tech started when I was young, and I've been hooked
-            ever since. I love solving complex problems and turning ideas into
-            reality through code.
-          </p>
-          <p class="text-gray-300 mb-8">
-            When I'm not coding, you can find me exploring new technologies,
-            contributing to open-source projects, or enjoying the outdoors.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <div class="flex items-center">
-              <i class="fas fa-map-marker-alt text-blue-400 mr-2"></i>
-              <span class="text-gray-300">Remote, Worldwide</span>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-code text-purple-400 mr-2"></i>
-              <span class="text-gray-300">Full-Stack Development</span>
-            </div>
-          </div>
-        </div>
-        <div class="md:w-1/2">
-          <div class="rounded-xl p-8 project-card">
-            <h3 class="text-xl font-semibold mb-4 ">My Experience</h3>
-            <div class="space-y-6">
-              <div>
-                <h4 class="font-medium text-gray-200">Intro to CS</h4>
-                <p class="text-sm text-gray-400">2018 - 2022</p>
-                <p class="text-gray-300 mt-2">
-                  Learning Web, Desktop & Game development.
-                </p>
-              </div>
-              <div>
-                <h4 class="font-medium text-gray-200">
-                  Computer Science Student
-                </h4>
-                <p class="text-sm text-gray-400">2022- 2025</p>
-                <p class="text-gray-300 mt-2">
-                  Graduated with honors while working on many personal projects.
-                </p>
-              </div>
-              <div>
-                <h4 class="font-medium text-gray-200">Freelance</h4>
-                <p class="text-sm text-gray-400">2025 - Present</p>
-                <p class="text-gray-300 mt-2">
-                  Worked with various clients to deliver custom web solutions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+              <div class="section-divider my-5"></div>
       <h2
         class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text"
       >
-        Featured Projects
+        All Projects
       </h2>
+            <div class="section-divider my-5"></div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Project 1 -->
         <div class="project-card rounded-xl overflow-hidden">
           <div
-            class="h-48 bg-gradient-to-r from-blue-600 to-purple-700 flex items-center justify-center"
+            class="h-48 bg-gradient-to-r from-white-600 to-purple-700 flex items-center justify-center"
           >
             <i
               class="fa-brands fa-discord text-6xl text-white opacity-90"
@@ -344,7 +229,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         <!-- Project 2 -->
         <div class="project-card rounded-xl overflow-hidden">
           <div
-            class="h-48 bg-gradient-to-r from-purple-600 to-pink-700 flex items-center justify-center"
+            class="h-48 bg-gradient-to-r from-white-600 to-pink-700 flex items-center justify-center"
           >
             <i class="fa-solid fa-satellite-dish text-6xl text-white opacity-90"></i>
           </div>
@@ -371,7 +256,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         <!-- Project 3 -->
         <div class="project-card rounded-xl overflow-hidden">
           <div
-            class="h-48 bg-gradient-to-r from-pink-600 to-red-700 flex items-center justify-center"
+            class="h-48 bg-gradient-to-r from-white-600 to-red-700 flex items-center justify-center"
           >
             <i class="fa-solid fa-tv text-6xl text-white opacity-90"></i>
           </div>
@@ -394,230 +279,96 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             </a>
           </div>
         </div>
+
+                <!-- Project 4 0x35 -->
+        <div class="project-card rounded-xl overflow-hidden">
+          <div
+            class="h-48 bg-gradient-to-r from-white-600 to-white-700 flex items-center justify-center"
+          >
+            <i class="fa-solid fa-skull-crossbones text-6xl text-white opacity-90"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">0x35</h3>
+            <p class="text-gray-400 mb-4">
+              Only for educational purposes. 
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >Wiki</span
+              >
+            </div>
+            <a
+              href="https://github.com/v4ish/0x35"
+              class="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center"
+            >
+              View Project <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+                <!-- Project 5 Pentest-toolkit -->
+        <div class="project-card rounded-xl overflow-hidden">
+          <div
+            class="h-48 bg-gradient-to-r from-white-600 to-red-700 flex items-center justify-center"
+          >
+            <i class="fa-solid fa-terminal text-6xl text-white opacity-90"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Pentest-Toolkit</h3>
+            <p class="text-gray-400 mb-4">
+             A CLI PenTesting Toolkit using Playwright & Python. 
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >Python</span
+              >
+            </div>
+            <a
+              href="https://github.com/v4ish/Pentest-Toolkit"
+              class="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center"
+            >
+              View Project <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+                <!-- Project 6 -->
+        <div class="project-card rounded-xl overflow-hidden">
+          <div
+            class="h-48 bg-gradient-to-r from-white-600 to-red-700 flex items-center justify-center"
+          >
+            <i class="fa-solid fa-syringe text-6xl text-white opacity-90"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Venom-injector</h3>
+            <p class="text-gray-400 mb-4">
+              A dll-injector for Counter-Strike: Source
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="skill-badge px-3 py-1 rounded-full text-xs text-gray-300"
+                >C++</span
+              >
+            </div>
+            <a
+              href="https://github.com/v4ish/venom-injector"
+              class="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center"
+            >
+              View Project <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
       </div>
+
+      
       <div class="text-center mt-12">
         <a
-          href="projects.html" target="_blank"
+          href="https://github.com/v4ish?tab=repositories&q=&type=&language=&sort=stargazers" target="_blank"
           class="inline-flex items-center px-6 py-3 border border-gray-700 rounded-md text-white font-medium hover:bg-gray-800 transition-colors overflow-hidden"
         >
         
-          View All Projects <i class="project-card"></i>
+          Full repositories <i class="project-card"></i>
         </a>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-      <h2
-        class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text"
-      >
-        Skills & Technologies
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        <!-- Frontend -->
-        <div class="rounded-xl p-8 project-card">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-laptop-code text-blue-400 mr-3 text-xl"></i>
-            <h3 class="text-lg font-semibold">Frontend</h3>
-          </div>
-          <ul class="space-y-2">
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> React.js
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Next.js
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Vue.js
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
-              TailwindCSS
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
-              TypeScript
-            </li>
-          </ul>
-        </div>
-
-        <!-- Backend -->
-        <div class="rounded-xl p-8 project-card">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-server text-purple-400 mr-3 text-xl"></i>
-            <h3 class="text-lg font-semibold">Backend</h3>
-          </div>
-          <ul class="space-y-2">
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Node.js
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Express
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Django
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> GraphQL
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> REST APIs
-            </li>
-          </ul>
-        </div>
-
-        <!-- Databases -->
-        <div class="rounded-xl p-8 project-card">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-database text-pink-400 mr-3 text-xl"></i>
-            <h3 class="text-lg font-semibold">Databases</h3>
-          </div>
-          <ul class="space-y-2">
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> MongoDB
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
-              PostgreSQL
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Firebase
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Redis
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> MySQL
-            </li>
-          </ul>
-        </div>
-
-        <!-- DevOps -->
-        <div class="rounded-xl p-8 project-card">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-cloud text-yellow-400 mr-3 text-xl"></i>
-            <h3 class="text-lg font-semibold">DevOps</h3>
-          </div>
-          <ul class="space-y-2">
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Docker
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
-              Kubernetes
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> AWS
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> CI/CD
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> GitHub
-              Actions
-            </li>
-          </ul>
-        </div>
-
-        <!-- Design -->
-        <div class="rounded-xl p-8 project-card">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-paint-brush text-green-400 mr-3 text-xl"></i>
-            <h3 class="text-lg font-semibold">Design</h3>
-          </div>
-          <ul class="space-y-2">
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Figma
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> Adobe XD
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i> UI/UX
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
-              Prototyping
-            </li>
-            <li class="flex items-center text-gray-300">
-              <i class="fas fa-check text-green-400 mr-2 text-xs"></i>
-              Wireframing
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-      <h2
-        class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text"
-      >
-        Get In Touch
-      </h2>
-      <div class="flex flex-col md:flex-row gap-12">
-        <div class="md:w-1/2">
-          <div class="rounded-xl p-8 project-card h-full">
-            <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-            <div class="space-y-6">
-              <div class="flex items-start">
-                <i class="fas fa-envelope text-blue-400 mt-1 mr-4"></i>
-                <div>
-                  <h4 class="font-medium text-gray-200">Email</h4>
-                  <a
-                    href="mailto:hello@v4ish.dev"
-                    class="text-gray-400 hover:text-blue-400 transition-colors"
-                    >thevk350@proton.me</a
-                  >
-                </div>
-              </div>
-              <div class="flex items-start">
-                <i class="fas fa-globe text-purple-400 mt-1 mr-4"></i>
-                <div>
-                  <h4 class="font-medium text-gray-200">Website</h4>
-                  <a
-                    href="https://v4ish.vercel.app/"
-                    class="text-gray-400 hover:text-purple-400 transition-colors"
-                    >v4ish.vercel.app</a
-                  >
-                </div>
-              </div>
-              <div class="flex items-start">
-                <i class="fab fa-github text-gray-300 mt-1 mr-4"></i>
-                <div>
-                  <h4 class="font-medium text-gray-200">GitHub</h4>
-                  <a
-                    href="https://github.com/v4ish"
-                    class="text-gray-400 hover:text-gray-200 transition-colors"
-                    >github.com/v4ish</a
-                  >
-                </div>
-              </div>
-              <div class="flex items-start">
-                <i class="fab fa-linkedin text-blue-400 mt-1 mr-4"></i>
-                <div>
-                  <h4 class="font-medium text-gray-200">Linkedin</h4>
-                  <a
-                    href="https://www.linkedin.com/in/vaisakhmkumar/h"
-                    class="text-gray-400 hover:text-blue-400 transition-colors"
-                    >@vaisakhmkumar</a
-                  >
-                </div>
-              </div>
-              <div class="flex items-start">
-                <i class="fab fa-discord text-blue-400 mt-1 mr-4"></i>
-                <div>
-                  <h4 class="font-medium text-gray-200">Discord</h4>
-                  <a
-                    href="https://r.dsc.gg/v4ish"
-                    class="text-gray-400 hover:text-blue-400 transition-colors"
-                    >v4ish's server
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
